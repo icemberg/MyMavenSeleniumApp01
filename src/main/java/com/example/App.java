@@ -17,7 +17,7 @@ public class App {
             // Initialize ChromeOptions
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--no-sandbox"); // Bypass OS security model
-            
+            options.addArguments("--user-data-dir=/tmp/chrome_" + System.currentTimeMillis());
 
             // Initialize WebDriver with ChromeOptions
             WebDriver driver = new ChromeDriver(options);
