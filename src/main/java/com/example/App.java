@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class App {
     public static void main(String[] args) {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless", "--no-sandbox");
+        options.addArguments("--no-sandbox"); // Still needed for Linux/WSL2
         
         WebDriver driver = null;
         try {
@@ -20,7 +20,7 @@ public class App {
             driver.findElement(By.id("password")).sendKeys("secret_sauce");
             driver.findElement(By.id("login-button")).click();
             
-            Thread.sleep(60000);
+            Thread.sleep(60000); // Keep browser open for 1 minute
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
