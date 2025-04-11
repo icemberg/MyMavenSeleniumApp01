@@ -9,7 +9,7 @@ public class App {
     public static void main(String[] args) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox"); // Necessary for Linux/WSL2
-        options.addArguments("--disable-dev-shm-usage");
+	options.addArguments("--headless"); 
         WebDriver driver = null;
         try {
             driver = new ChromeDriver(options);
